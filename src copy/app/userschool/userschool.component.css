@@ -1,0 +1,32 @@
+.school-list {
+    max-width: 600px; /* Largeur maximale de la liste */
+    margin: 20px auto; /* Centrer la liste sur la page */
+    padding: 20px; /* Espacement intérieur */
+    border: 1px solid #ccc; /* Bordure légère autour de la liste */
+    border-radius: 8px; /* Coins arrondis */
+    background-color: #f9f9f9; /* Couleur d'arrière-plan */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Ombre légère pour un effet d'élévation */
+  }
+  
+  h2 {
+    text-align: center; /* Centrer le titre */
+    color: #333; /* Couleur du texte du titre */
+  }
+  
+  .list-group-item {
+    list-style-type: none; /* Supprimer les puces de la liste */
+    padding: 10px; /* Espacement intérieur pour chaque élément de la liste */
+    border-bottom: 1px solid #ddd; /* Bordure séparant les éléments */
+    transition: background-color 0.3s; /* Transition pour un effet au survol */
+    display: flex; /* Utiliser flexbox pour aligner les éléments */
+    align-items: center; /* Aligner verticalement */
+  }
+  
+  .list-group-item:hover {
+    background-color: #e6f7ff; /* Couleur de fond au survol */
+  }
+  
+  .me-2 {
+    margin-right: 0.5rem; /* Espacement à droite du sticker */
+  }
+  

@@ -1,0 +1,19 @@
+<div class="style-list">
+  <h2>Dance Styles</h2>
+
+  <div *ngIf="errorMessage" class="error-message">
+    {{ errorMessage }}
+  </div>
+
+  <div *ngIf="styles.length === 0 && !errorMessage">
+    No styles found for this category.
+  </div>
+
+  <div class="styles-container">
+    <div *ngFor="let style of styles" class="style-item">
+      💃 {{ style.name }} <!-- Emoji de femme qui danse -->
+      <!-- Bouton pour naviguer vers les écoles associées à ce style -->
+      <button (click)="navigateToSchools(style.id)">View Schools</button>
+    </div>
+  </div>
+</div>

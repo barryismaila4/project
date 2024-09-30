@@ -1,0 +1,36 @@
+<p>catlist works!</p>
+<div class="catlist">
+    <h2>Dance Categories</h2>
+
+    <div *ngIf="successMessage" class="success-message">
+        {{ successMessage }}
+    </div>
+    
+    <div *ngIf="errorMessage" class="error-message">
+        {{ errorMessage }}
+    </div>
+
+    <ul>
+        <li *ngFor="let category of danceCategories">
+            {{ category.name }}
+            <button (click)="editDanceCategory(category)">Edit</button>
+            <button (click)="deleteDanceCategory(category.id)">Delete</button>
+        </li>
+    </ul>
+
+    <div *ngIf="danceCategories.length === 0">No categories found.</div>
+
+    <div *ngIf="categoryIdToUpdate !== null">
+        <h3>Update Category</h3>
+        <form [formGroup]="updateForm" (ngSubmit)="updateDanceCategory()">
+            <label for="name">Category Name:</label>
+            <input id="name" formControlName="name">
+            <button type="submit">Update</button>
+            <button type="button" (click)="categoryIdToUpdate = null; updateForm.reset()">Cancel</button>
+        </form>
+    </div>
+
+    <!-- Nouveau bouton pour ajouter une catégorie -->
+    <button (click)="navigateToAddCategory()">Add Category</button>
+    <button (click)="navigateToAddCategorys()">retourn</button>
+</div>

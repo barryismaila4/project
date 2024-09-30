@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+<body>
+
+<div class="w3-container w3-teal">
+  <h1>DancePlatform by Barry </h1>
+  <p>Gérez vos catégories, styles, écoles et cours de danse.</p>
+</div>
+
+<div class="w3-row-padding w3-margin-top">
+  <div class="w3-col l6 s12">
+    <div class="w3-card-4">
+      <header class="w3-container w3-blue">
+        <h2>Gestion des Styles de Danse</h2>
+      </header>
+      <div class="w3-container">
+        <p>Ajoutez, modifiez ou supprimez des styles de danse pour enrichir votre catalogue.</p>
+        <button class="w3-button w3-green" (click)="navigateToCategoryAdd()">Voir les Styles de Danse</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="w3-col l6 s12">
+    <div class="w3-card-4">
+      <header class="w3-container w3-orange">
+        <h2>Gestion des Catégories</h2>
+      </header>
+      <div class="w3-container">
+        <p>Organisez vos styles de danse en catégories pour une meilleure clarté.</p>
+        <button class="w3-button w3-green" (click)="navigateToCategoryList()">Voir la Liste des Catégories</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="w3-col l6 s12">
+    <div class="w3-card-4">
+      <header class="w3-container w3-red">
+        <h2>Gestion des Écoles de Danse</h2>
+      </header>
+      <div class="w3-container">
+        <p>Ajoutez et gérez les écoles de danse pour offrir des options variées à vos élèves.</p>
+        <button class="w3-button w3-green" (click)="navigateToCategoryLists()">Voir la Liste des Écoles de Danse</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="w3-col l6 s12">
+    <div class="w3-card-4">
+      <header class="w3-container w3-purple">
+        <h2>Gestion des Cours</h2>
+      </header>
+      <div class="w3-container">
+        <p>Créez et gérez des cours de danse pour chaque style et niveau.</p>
+        <button class="w3-button w3-green" (click)="navigateToCategoryListss()">Voir la Liste des Cours</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="w3-container w3-teal w3-margin-top">
+  <p>&copy; 2024 - Votre Application de Gestion de Danse. Tous droits réservés.</p>
+</footer>
+
+</body>
+</html>

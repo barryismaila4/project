@@ -1,0 +1,31 @@
+<h2>Admin Panel</h2>
+<div class="admin-actions">
+  <button (click)="returnToCategoryList()">View Category List</button>
+</div>
+
+<p>category-crud works!</p>
+<div class="category-crud">
+    <h2>Add Dance Category</h2>
+  
+    <form [formGroup]="categoryForm" (ngSubmit)="onSubmit()">
+      <div>
+        <label for="name">Category Name:</label>
+        <input id="name" formControlName="name" placeholder="Enter category name" />
+        <div *ngIf="categoryForm.get('name')?.invalid && (categoryForm.get('name')?.touched || categoryForm.get('name')?.dirty)">
+          <small class="error">Category name is required.</small>
+        </div>
+      </div>
+  
+      <button type="submit" [disabled]="categoryForm.invalid">Add Category</button>
+    </form>
+  
+    <div *ngIf="successMessage" class="success-message">
+      {{ successMessage }}
+    </div>
+    
+    <div *ngIf="errorMessage" class="error-message">
+      {{ errorMessage }}
+    </div>
+
+    <button (click)="returnToCategoryList()">Return to Category List</button> <!-- Bouton de retour -->
+</div>

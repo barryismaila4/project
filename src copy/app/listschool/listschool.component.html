@@ -1,0 +1,40 @@
+<h2>Liste des écoles de danse</h2>
+
+<!-- Affichage des messages de succès ou d'erreur -->
+<div *ngIf="successMessage" class="success-message">
+  {{ successMessage }}
+</div>
+
+<div *ngIf="errorMessage" class="error-message">
+  {{ errorMessage }}
+</div>
+
+<!-- Bouton pour ajouter une nouvelle école de danse -->
+<button (click)="goToAddSchool()" class="btn btn-primary">Ajouter une école</button>
+<button (click)="goToAddSchools()" class="btn btn-primary">retourn</button>
+
+<!-- Tableau des écoles de danse -->
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nom de l'école</th>
+      <th>Position</th>
+      <th>Horaire</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let school of danceSchools">
+      <td>{{ school.id }}</td>
+      <td>{{ school.name }}</td>
+      <td>{{ school.position }}</td>
+      <td>{{ school.horaire }}</td>
+      <td>
+        <button (click)="deleteDanceSchool(school.id)" class="btn btn-danger">
+          Supprimer
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>

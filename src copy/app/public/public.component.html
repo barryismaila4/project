@@ -1,0 +1,41 @@
+<div class="public-container">
+  <header>
+    <div class="logo">
+      <h1>Dance Academy</h1>
+      <p>Your place to learn and enjoy dance!</p>
+    </div>
+    <nav>
+      <ul>
+        <li><a routerLink="/public/catuser">Catégories de Danse</a></li>
+        <li><a routerLink="/public/styles/1">Styles de Danse</a></li> <!-- Exemple avec un ID -->
+        <li><a routerLink="/public/chat">Chatbot</a></li> <!-- Lien vers le Chatbot -->
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Bienvenue dans notre univers de danse!</h2>
+    <p>
+      Découvrez nos différentes catégories de danse, apprenez les styles qui vous passionnent,
+      et rejoignez une communauté d'amateurs de danse. Cliquez sur les liens ci-dessus pour explorer!
+    </p>
+    <div class="info-section">
+      <h3>À propos de nous</h3>
+      <p>
+        Nous sommes une académie de danse dédiée à promouvoir l'art de la danse sous toutes ses formes.
+        Nos instructeurs expérimentés sont là pour vous guider tout au long de votre parcours.
+      </p>
+    </div>
+
+    <router-outlet></router-outlet> <!-- Pour afficher les composants enfants -->
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Dance Academy. Tous droits réservés.</p>
+    <div class="social-media">
+      <a href="#" class="social-icon">Facebook</a>
+      <a href="#" class="social-icon">Instagram</a>
+      <a href="#" class="social-icon">Twitter</a>
+    </div>
+  </footer>
+</div>

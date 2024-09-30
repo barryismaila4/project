@@ -1,0 +1,22 @@
+<div class="school-list">
+  
+
+  <div *ngIf="danceSchools.length === 0">
+    No schools found for this style.
+  </div>
+
+  <ul *ngIf="danceSchools.length > 0" class="list-group">
+    <li *ngFor="let school of danceSchools" class="list-group-item d-flex align-items-center">
+      <i class="fas fa-school fa-2x me-2"></i>
+      <div>
+        <h3>{{ school.name }}</h3>
+        <p><strong>Position:</strong> {{ school.position }}</p>
+        <p><strong>Horaires:</strong> {{ school.horaire }}</p>
+        <p><strong>Style de Danse:</strong> {{ school.danceStyle.name }}</p>
+        <button class="btn btn-primary" (click)="navigateToCourses(school.id)">View Courses</button>
+      </div>
+    </li>
+  </ul>
+</div>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">

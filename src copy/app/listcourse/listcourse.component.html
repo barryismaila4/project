@@ -1,0 +1,36 @@
+<h2>Liste des Cours</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nom du Cours</th>
+      <th>Instructeur</th>
+      <th>Horaire</th>
+      <th>Contenu</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let course of courses">
+      <td>{{ course.id }}</td>
+      <td>{{ course.name }}</td>
+      <td>{{ course.instructor }}</td>
+      <td>{{ course.schedule }}</td>
+      <td>{{ course.contenu }}</td>
+      <td>
+        <button (click)="deleteCourse(course.id)">Supprimer</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<div *ngIf="errorMessage" style="color: red;">
+  {{ errorMessage }}
+</div>
+
+<!-- Bouton pour ajouter un nouveau cours -->
+<button (click)="goToAddCourse()" class="btn btn-primary mt-3">Ajouter un Cours</button>
+
+<!-- Bouton pour revenir à la page d'administration -->
+<button (click)="goToAdmin()" class="btn btn-secondary mt-3">Retour à l'Administration</button>

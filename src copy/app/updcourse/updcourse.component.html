@@ -1,0 +1,43 @@
+<h2>Mettre à jour le Cours</h2>
+
+<form (ngSubmit)="updateCourse()">
+  <div>
+    <label>ID</label>
+    <input type="text" [(ngModel)]="course.id" name="id" readonly />
+  </div>
+  
+  <div>
+    <label>Nom du Cours</label>
+    <input type="text" [(ngModel)]="course.name" name="name" required />
+  </div>
+
+  <div>
+    <label>Instructeur</label>
+    <input type="text" [(ngModel)]="course.instructor" name="instructor" required />
+  </div>
+
+  <div>
+    <label>Horaire</label>
+    <input type="text" [(ngModel)]="course.schedule" name="schedule" required />
+  </div>
+
+  <div>
+    <label>Contenu</label>
+    <textarea [(ngModel)]="course.contenu" name="contenu" required></textarea>
+  </div>
+
+  <div>
+    <label>École de Danse ID</label>
+    <input type="text" [(ngModel)]="course.danceSchool.id" name="danceSchoolId" required />
+  </div>
+
+  <button type="submit">Mettre à jour</button>
+</form>
+
+<div *ngIf="errorMessage" style="color: red;">
+  {{ errorMessage }}
+</div>
+
+<div *ngIf="successMessage" style="color: green;">
+  {{ successMessage }}
+</div>

@@ -1,0 +1,22 @@
+<p>catupdate works!</p>
+<div class="cat-update">
+    <h2>Mise à jour de la catégorie de danse</h2>
+  
+    <div *ngIf="successMessage" class="success-message">
+      {{ successMessage }}
+    </div>
+  
+    <div *ngIf="errorMessage" class="error-message">
+      {{ errorMessage }}
+    </div>
+  
+    <form [formGroup]="categoryForm" (ngSubmit)="updateDanceCategory()">
+      <label for="name">Nom de la catégorie :</label>
+      <input id="name" formControlName="name" placeholder="Entrez le nom de la catégorie" />
+      <div *ngIf="categoryForm.get('name')?.invalid && (categoryForm.get('name')?.touched || categoryForm.get('name')?.dirty)">
+        <small class="error">Le nom de la catégorie est requis.</small>
+      </div>
+      <button type="submit" [disabled]="categoryForm.invalid">Mettre à jour la catégorie</button>
+    </form>
+  </div>
+  

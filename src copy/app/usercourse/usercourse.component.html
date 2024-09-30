@@ -1,0 +1,25 @@
+<div class="course-list">
+    
+  
+    <div *ngIf="courses.length === 0">
+      No courses found for this school.
+    </div>
+  
+    <ul *ngIf="courses.length > 0">
+      <li *ngFor="let course of courses" class="course-item">
+        <h3>{{ course.name }}</h3>
+        <p><strong>Instructor:</strong> {{ course.instructor }}</p>
+        <p><strong>Schedule:</strong> {{ course.schedule }}</p>
+        <p><strong>Content:</strong> {{ course.contenu }}</p>
+      </li>
+    </ul>
+  
+    <!-- Boutons de téléchargement -->
+    <button (click)="downloadAsTxt()">Download All as TXT</button>
+    <button (click)="downloadAsPdf()">Download All as PDF</button>
+    <button (click)="downloadAsPng()">Download All as PNG</button>
+  
+    <!-- Message d'avertissement si la publicité n'a pas été vue -->
+    
+  </div>
+  

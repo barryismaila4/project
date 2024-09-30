@@ -1,0 +1,35 @@
+<h2>Add Dance Style</h2>
+
+<form [formGroup]="styleForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="name">Style Name:</label>
+    <input id="name" formControlName="name" placeholder="Enter style name" />
+    <div *ngIf="styleForm.get('name')?.invalid && (styleForm.get('name')?.touched || styleForm.get('name')?.dirty)">
+      <small class="error">Style name is required.</small>
+    </div>
+  </div>
+
+  <div>
+    <label for="categoryId">Select Dance Category:</label>
+    <select id="categoryId" formControlName="categoryId">
+      <option value="" disabled selected>Select a category</option>
+      <option *ngFor="let category of danceCategories" [value]="category.id">{{ category.name }}</option>
+    </select>
+    <div *ngIf="styleForm.get('categoryId')?.invalid && (styleForm.get('categoryId')?.touched || styleForm.get('categoryId')?.dirty)">
+      <small class="error">Category selection is required.</small>
+    </div>
+  </div>
+
+  <button type="submit" [disabled]="styleForm.invalid">Add Style</button>
+</form>
+
+<div *ngIf="successMessage" class="success-message">
+  {{ successMessage }}
+</div>
+
+<div *ngIf="errorMessage" class="error-message">
+  {{ errorMessage }}
+</div>
+
+<!-- Bouton de retour vers la liste des styles -->
+<button (click)="goToStyleList()">Retour à la liste des styles</button>

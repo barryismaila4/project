@@ -1,0 +1,20 @@
+.style-list {
+  text-align: center;
+  padding: 20px;
+}
+
+.styles-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.style-item {
+  background-color: #f2f2f2;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+  margin: 10px;
+  width: 100px; /* Ajustez cette valeur pour modifier la taille */
+  text-align: center;
+}

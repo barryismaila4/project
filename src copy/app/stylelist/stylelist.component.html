@@ -1,0 +1,58 @@
+<h2>Liste des styles de danse</h2>
+
+<!-- Affichage des messages de succès ou d'erreur -->
+<div *ngIf="successMessage" class="success-message">
+  {{ successMessage }}
+</div>
+
+<div *ngIf="errorMessage" class="error-message">
+  {{ errorMessage }}
+</div>
+
+<!-- Bouton pour ajouter un nouveau style -->
+<button (click)="navigateToAddStyle()">Ajouter un nouveau style</button>
+<button (click)="navigateToAddStyles()">retour</button>
+
+<!-- Tableau des styles -->
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nom</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let style of danceStyles">
+      <td>{{ style.id }}</td>
+      <td>{{ style.name }}</td>
+      <td>
+        <button (click)="editDanceStyle(style)">Modifier</button>
+        <button (click)="deleteDanceStyle(style.id)">Supprimer</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- Formulaire de mise à jour (affiché seulement si un style est sélectionné pour modification) -->
+<div *ngIf="styleIdToUpdate !== null">
+  <h3>Modifier le style de danse</h3>
+  <form [formGroup]="updateForm" (ngSubmit)="updateDanceStyle()">
+    <label for="name">Nom du style :</label>
+    <input id="name" formControlName="name" placeholder="Entrez le nom du style" />
+    <div *ngIf="updateForm.get('name')?.invalid && (updateForm.get('name')?.touched || updateForm.get('name')?.dirty)">
+      <small class="error">Le nom du style est requis.</small>
+    </div>
+    
+    <label for="danceCategory">Catégorie de danse :</label>
+    <select id="danceCategory" formControlName="danceCategory">
+      <option *ngFor="let category of danceCategories" [value]="category.id">{{ category.name }}</option>
+    </select>
+    <div *ngIf="updateForm.get('danceCategory')?.invalid && (updateForm.get('danceCategory')?.touched || updateForm.get('danceCategory')?.dirty)">
+      <small class="error">La catégorie de danse est requise.</small>
+    </div>
+
+    <button type="submit" [disabled]="updateForm.invalid">Mettre à jour le style</button>
+    <button type="button" (click)="styleIdToUpdate = null; updateForm.reset()">Annuler</button>
+  </form>
+</div>

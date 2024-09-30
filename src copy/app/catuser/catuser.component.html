@@ -1,0 +1,22 @@
+<div class="category-list">
+  <h2>Dance Categories</h2>
+
+  <div *ngIf="errorMessage" class="error-message">
+    {{ errorMessage }}
+  </div>
+
+  <div class="category-container">
+    <div *ngFor="let category of danceCategories" 
+         class="category-item"
+         (click)="navigateToStyles(category.id)">
+      {{ category.name }}
+    </div>
+  </div>
+
+  <div *ngIf="danceCategories.length === 0">No categories found.</div>
+
+  <!-- Affichage de la température -->
+  <div class="weather-cloud" *ngIf="temperature !== null">
+    <p>Temperature in Tunis: {{ temperature }} °C</p>
+  </div>
+</div>

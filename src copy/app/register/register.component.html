@@ -1,0 +1,25 @@
+<p>Please enter the following information !</p>
+
+<form [formGroup]="register" (ngSubmit)="handleSubmit()">
+    <label for="email">Email
+    </label>
+    <input type="email" id="email" placeholder="Please enter your email"  formControlName="email">
+
+
+    <br/> <br/> <br/>
+    <label for="name">Name</label>
+         <input type="text" id="name"  placeholder="Please enter your Name" formControlName="name">
+
+
+    <br/> <br/> <br/>
+    <label for="password">Password</label>
+         <input type="password" id="password"  placeholder="Please enter your password" formControlName="password">
+    
+         <br/> <br/> <br/>
+    <button type="submit">Register</button>
+    
+    <br/> <br/> <br/>
+    <a routerLink = "/login">already register</a>
+    
+
+</form>
